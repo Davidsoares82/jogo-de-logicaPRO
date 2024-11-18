@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jogo-logica</title>
+    <link rel="stylesheet" href="./src/css/style.css">
+</head>
+
+<body>
+
+    <section class="main">
+        <header class="cabecalho">
+            <abbr title="titulo"> As macãs da vida</abbr>
+        </header>
+        <div class="score">
+            <img class="logo-masca" src="./src/imagens/mascã1.png" alt="maçã">
+            <p id="pontuacao">socre: 50</p>
+            <p id="quant-masca">10/0</p>
+            <img class="logo-masca" src="./src/imagens/personagem3.png" alt=" logo personagem">
+            <button id="dica">dica</button>
+        </div>
+        <section id="interface1">
+            <button id="btn" onclick="iniciarJogo()">play</button>
+        </section>
+        <div id="interface-vitoria" class="interface vitoria">
+            <p>🎉 Parabéns! Você venceu! 🎉</p>
+            <button onclick="recarregar();">Reiniciar</button>
+        </div>
+
+        <div id="interface-derrota" class="interface derrota">
+            <p>💀 Você perdeu! 💀</p>
+            <button onclick="recarregar();">Reiniciar</button>
+        </div>
+
+        <main class="container">
+            <table class="tabela">
+                <tr class="linha primeira">
+                    <td class="coluna">
+                        <img class="obstaculos " src="./src/imagens/mascã1.png" alt="mascã">
+                    </td>
+                    <td class="coluna">
+                        <img class="obstaculos " src="./src/imagens/mascã1.png" alt="mascã">
+                    </td>
+                    <td class="coluna"></td>
+                    <td class="coluna"></td>
+                    <td class="coluna">
+                        <img class="obstaculos " src="./src/imagens/mascã1.png" alt="arvore">
+                    </td>
+                    <td class="coluna"></td>
+                    <td class="coluna"></td>
+                    <td class="coluna">
+                        <img class="obstaculos " src="./src/imagens/mascã1.png" alt="arvore">
+                    </td>
+                </tr>
+                <tr class="linha segunda">
+                    <td class="coluna"></td>
+                    <td class="coluna"></td>
+                    <td class="coluna"></td>
+                    <td class="coluna">
+                        <img class="obstaculos " src="./src/imagens/mascã1.png" alt="arvore">
+                    </td>
+                    <td class="coluna">
+                        <img class="obstaculos " src="./src/imagens/mascã1.png" alt="arvore">
+                    </td>
+                    <td class="coluna"></td>
+                    <td class="coluna">
+                        <img class="obstaculos " src="./src/imagens/mascã1.png" alt="arvore">
+                    </td>
+                    <td class="coluna"></td>
+                </tr>
+                <tr class="linha terceira">
+                    <td class="coluna">
+                        <img class="obstaculos " src="./src/imagens/mascã1.png" alt="arvore">
+                    </td>
+                    <td class="coluna">
+                        <img class="obstaculos " src="./src/imagens/mascã1.png" alt="arvore">
+                    </td>
+                    <td class="coluna"></td>
+                    <td class="coluna"></td>
+                    <td class="coluna">
+                        <img class="obstaculos " src="./src/imagens/mascã1.png" alt="arvore">
+                    </td>
+                    <td class="coluna"></td>
+                    <td class="coluna"></td>
+                    <td class="coluna">
+                        <img class="obstaculos " src="./src/imagens/mascã1.png" alt="arvore">
+                    </td>
+                </tr>
+                <tr class="linha quarta">
+                    <td class="coluna"></td>
+                    <td class="coluna"></td>
+                    <td class="coluna">
+                        <img class="obstaculos " src="./src/imagens/mascã1.png" alt="arvore">
+                    </td>
+                    <td class="coluna">
+                        <img class="obstaculos " src="./src/imagens/mascã1.png" alt="mascã">
+                    </td>
+                    <td class="coluna"></td>
+                    <td class="coluna">
+                        <img class="obstaculos " src="./src/imagens/mascã1.png" alt="arvore">
+                    </td>
+                    <td class="coluna"></td>
+                    <td class="coluna">
+                        <img class="obstaculos " src="./src/imagens/mascã1.png" alt="arvore">
+                    </td>
+                </tr>
+                <tr class="linha quinta">
+                    <td class="coluna">
+                        <img class="obstaculos " src="./src/imagens/mascã1.png" alt="arvore">
+                    </td>
+                    <td class="coluna"></td>
+                    <td class="coluna"></td>
+                    <td class="coluna"></td>
+                    <td class="coluna">
+                        <img class="obstaculos " src="./src/imagens/mascã1.png" alt="arvore">
+                    </td>
+                    <td class="coluna"></td>
+                    <td class="coluna">
+                        <img class="obstaculos " src="./src/imagens/mascã1.png" alt="mascã">
+                    </td>
+                    <td class="coluna"></td>
+                </tr>
+                <tr class="linha sexta">
+                    <td class="coluna"></td>
+                    <td class="coluna">
+                        <img class="obstaculos " src="./src/imagens/mascã1.png" alt="arvore">
+                    </td>
+                    <td class="coluna">
+                        <img class="obstaculos " src="./src/imagens/mascã1.png" alt="arvore">
+                    </td>
+                    <td class="coluna"></td>
+                    <td class="coluna"></td>
+                    <td class="coluna"></td>
+                    <td class="coluna">
+                        <img class="obstaculos " src="./src/imagens/mascã1.png" alt="arvore">
+                    </td>
+                    <td class="coluna"></td>
+                </tr>
+                <tr class="linha setima">
+                    <td class="coluna"></td>
+                    <td class="coluna"></td>
+                    <td class="coluna">
+                        <img class="obstaculos " src="./src/imagens/mascã1.png" alt="arvore">
+                    </td>
+                    <td class="coluna"></td>
+                    <td class="coluna"></td>
+                    <td class="coluna">
+                        <img class="obstaculos " src="./src/imagens/mascã1.png" alt="arvore">
+                    </td>
+                    <td class="coluna"></td>
+                    <td class="coluna"></td>
+                </tr>
+                <tr class="linha oitava">
+                    <td class="coluna">
+                        <img class="obstaculos " src="./src/imagens/mascã1.png" alt="arvore">
+                    </td>
+                    <td class="coluna"></td>
+                    <td class="coluna"></td>
+                    <td class="coluna">
+                        <img class="obstaculos " src="./src/imagens/mascã1.png" alt="arvore">
+                    </td>
+                    <td class="coluna"></td>
+                    <td class="coluna">
+                        <img class="obstaculos " src="./src/imagens/mascã1.png" alt="mascã">
+                    </td>
+                    <td class="coluna"></td>
+                    <td class="coluna">
+
+                        <img id="personagem" src="./src/imagens/personagem2 (2).png" alt="personagem">
+                    </td>
+                </tr>
+            </table>
+        </main>
+        <div class="setas">
+            <img class="seta-laterais" onclick="movEsquerda(); Colisaomascaf(); Colisaomascav();" id="seta-esquerda"
+                src="./src/imagens/seta-esquerda.png" alt="seta para esquerda">
+            <img onclick="movTopo(); Colisaomascaf(); Colisaomascav();" id="seta-topo" src="./src/imagens/pra-cima.png"
+                alt="seta para cima">
+            <img onclick="movBaixo(); Colisaomascaf(); Colisaomascav();" id="seta-baixo"
+                src="./src/imagens/seta-baixo.png" alt=" seta para baixo">
+            <img class="seta-laterais" onclick="movDireita();Colisaomascav(); Colisaomascaf(); " id="seta-direita"
+                src="./src/imagens/setas-direitas.png" alt="seta para direita">
+        </div>o
+    </section>
+
+    <script src="./src/js/script.js"></script>
+</body>
+
+</html>
